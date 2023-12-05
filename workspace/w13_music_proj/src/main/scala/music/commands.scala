@@ -13,7 +13,7 @@ object Command:
   def apply(cmd: String, args: Seq[String]): String =
     all.find(_.str == cmd) match
       case Some(c) => c(args)
-      case None => s"Unkown command: $cmd\nType ? for help."
+      case None => s"Unknown command: $cmd\nType ? for help."
 
   def loopUntilExit(nextLine: () => String): Unit =
     val line = nextLine()
